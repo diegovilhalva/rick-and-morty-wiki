@@ -19,9 +19,9 @@ const Cards = ({ results }) => {
     };
 
     return (
-        <div className="row">
+        <>
             {results.map((result) => (
-                <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative h-" key={result.id}>
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative " key={result.id}>
                     <div className={` ${styles.cards} d-flex flex-column justify-content-center`}>
                         <img src={result.image} alt={result.name} className={`${styles.img} img-fluid`} />
                         <div  className={`${styles.content} content`}>
@@ -38,7 +38,7 @@ const Cards = ({ results }) => {
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     );
 };
 

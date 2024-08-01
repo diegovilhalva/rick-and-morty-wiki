@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Cards from "./components/Cards/Cards"
 import Filters from "./components/Filters/Filters"
+import Pagination from "./components/Pagination/Pagination"
 
 
 
@@ -41,7 +42,7 @@ function App() {
             </div>
           </div>
         </div>
-
+        <Pagination setPageNumber={setPageNumber} pageNumber={pageNumber}/>
       </div>
     </>
   )
