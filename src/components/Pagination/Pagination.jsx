@@ -1,22 +1,49 @@
 import React from 'react'
+import ReactPaginate from 'react-paginate'
 
-const Pagination = ({pageNumber,setPageNumber}) => {
+const Pagination = ({ pageNumber, setPageNumber, info }) => {
 
-    const prev = () => {
-        if (pageNumber === 1) {
-            return
-        }
-        setPageNumber(prev=> prev - 1 )
-    }
-    const next = () => {
-      
-        setPageNumber(prev => prev + 1)
-    }
+
   return (
-    <div className="container d-flex justify-content-center gap-5 my-5">
-        {pageNumber !== 1 ? <button className='btn btn-primary' onClick={prev}>Prev</button> : <button className='btn btn-primary' onClick={prev} disabled>Prev</button>}
-        <button className='btn btn-primary' onClick={next}>Next</button>
-    </div>
+    <>
+    <style jsx="true">
+        {`
+          @media (max-width: 768px) {
+            .pagination {
+              font-size: 12px;
+            }
+            .btn,
+            .btn-primary {
+              display: none;
+            }
+          }
+          @media (max-width: 768px) {
+            .pagination {
+              font-size: 14px;
+            }
+          }
+        `}
+      </style>
+
+      <ReactPaginate
+        className='pagination justify-content-center gap-1 my-4'
+        forcePage={pageNumber === 0 ? 0 : pageNumber - 1}
+        nextLabel={'Next'}
+        previousLabel={'Prev'}
+        previousClassName='btn btn-primary '
+        nextClassName='btn btn-primary'
+        pageCount={info?.pages}
+        pageRangeDisplayed={3}
+        nextLinkClassName='text-white'
+        previousLinkClassName='text-white'
+        pageClassName='page-item'
+        pageLinkClassName='page-link'
+        onPageChange={(data) => setPageNumber(data.selected + 1)}
+        activeClassName='active'
+
+      />
+    </>
+
   )
 }
 
