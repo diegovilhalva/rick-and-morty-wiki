@@ -12,8 +12,9 @@ const Pagination = ({ pageNumber, setPageNumber, info }) => {
             .pagination {
               font-size: 12px;
             }
+            .pagination 
             .btn,
-            .btn-primary {
+            .pagination .btn-primary {
               display: none;
             }
           }

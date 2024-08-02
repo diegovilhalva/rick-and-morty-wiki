@@ -4,12 +4,16 @@ import Filters from "./components/Filters/Filters";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
 
+
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
+  const [status,setStatus] = useState("")
+  const [gender,setGender] = useState("")
+  const [species,setSpecies] = useState("") 
   const [data, setData] = useState([]); 
   const { info, results } = data 
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +35,7 @@ function App() {
         <div className="container">
           <div className="row">
            
-              <Filters />
+              <Filters setStatus={setStatus} setSpecies={setSpecies} setGender={setGender} setPageNumber={setPageNumber} />
             
             <div className="col-lg-8 col-12">
               <div className="row">
