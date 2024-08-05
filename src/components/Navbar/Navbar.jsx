@@ -16,13 +16,13 @@ const Navbar = () => {
                 }
             `}
         </style>
-    <i class="fa-solid fa-bars open text-dark"></i>
-    <i class="fa-solid fa-x close text-dark"></i>
+    <i className="fa-solid fa-bars open text-dark"></i>
+    <i className="fa-solid fa-x close text-dark"></i>
     </button>
     <div className="collapse navbar-collapse justify-content-end " id="navbarNav">
       <ul className="navbar-nav fs-5">
         <li className="nav-item">
-          <NavLink a to={'/'}  className={"nav-link"}  >Characters</NavLink>
+        <NavLink a to={'/'}  className={"nav-link"} >Characters</NavLink>
         </li>
         <li className="nav-item">
           <NavLink to={'/episodes'} className={"nav-link"}>Episodes</NavLink>
