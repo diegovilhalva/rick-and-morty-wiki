@@ -12,10 +12,12 @@ const Pagination = ({ pageNumber, setPageNumber, info }) => {
             .pagination {
               font-size: 12px;
             }
+            
             .pagination 
             .btn,
             .pagination .btn-primary {
               display: none;
+              
             }
           }
           @media (max-width: 768px) {

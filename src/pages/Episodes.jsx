@@ -28,7 +28,7 @@ const Episodes = () => {
     fetchData()
   }, [api])
 
-  console.log(info)
+
  
   return (
     <div className='container'>

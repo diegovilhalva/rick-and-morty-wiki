@@ -30,7 +30,7 @@ const Home = () => {
       <>
         <div>
   
-  
+          <h1 className="text-center fs-2 mb-4">Meet the Characters of Rick and Morty</h1>
           <Search setSearch={setSearch} setPageNumber={setPageNumber} />
           <div className="container">
             <div className="row">
